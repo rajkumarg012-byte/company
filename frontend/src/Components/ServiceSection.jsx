@@ -22,7 +22,7 @@ const ServicesSection = () => {
     {
       icon: <FaBroom className="text-purple-600 text-4xl mb-4 sm:mb-3" />,
       title: "Cleaning Services",
-      desc: "Deep cleaning and sanitization services for homes and commercial spaces with modern tools.",
+      desc: "Deep cleaning and sanitization water tank  services for homes and commercial spaces with modern tools.",
     },
     {
       icon: <FaBug className="text-purple-600 text-4xl mb-4 sm:mb-3" />,

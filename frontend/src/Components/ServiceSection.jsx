@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaFaucet,
   FaBroom,
@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import { Zap, ShieldCheck, Users } from "lucide-react";
 import WhatsappButton from "./whatsappButton";
 const ServicesSection = () => {
+    const [activeIndex, setActiveIndex] = useState(null);
   const services = [
     {
       icon: <FaFaucet className="text-purple-600 text-4xl mb-4 sm:mb-3" />,
@@ -78,6 +79,7 @@ const ServicesSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl">
           {services.map((service, index) => (
             <motion.div
+             onClick={() => setActiveIndex(index === activeIndex ? null : index)}
               key={index}
               className="bg-white shadow-md hover:shadow-xl p-8 border border-gray-200 hover:border-purple-500 transition-all duration-300 flex flex-col items-center text-center hover:-translate-y-1 group"
               initial={{ y: 50, opacity: 0 }}           // start below
@@ -91,10 +93,14 @@ const ServicesSection = () => {
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                 {service.desc}
               </p>
-              <div className="hidden group-hover:block mt-1.5">
-
-               <WhatsappButton data={service.title} />
-              </div>
+                <div
+              className={`mt-3 transition-all duration-300 ${
+                activeIndex === index ? "block" : "hidden"
+              } lg:group-hover:block`} 
+              // 👆 Only enable hover behavior on large screens (lg)
+            >
+              <WhatsappButton data={service.title} />
+            </div>
             </motion.div>
           ))}
         </div>

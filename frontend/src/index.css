@@ -1,0 +1,39 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Poppins:ital,wght@0,100;0,300;0,600;0,700;0,800;0,900;1,300;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,300;0,600;0,700;0,800;0,900;1,300;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+*{
+  /* font-family: 'Poppins',sans-serif; */
+ cursor: pointer;
+
+}
+html{
+  scroll-behavior: smooth;
+}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@theme{
+    --breakpoint-sm:400px;
+    /* --breakpoint-lg:1200px; */
+  --breakpoint-mobile-menu:680px;
+  --breakpoint-end-screen:1850px;
+  --breakpoint-xsl-886:986px;
+  /* --breakpoint-xl-1500:1500px; */
+  --font-Poppins:'Poppins','sans-serif';
+  --font-orbitron:'Orbitron ',' sans-serif';
+  --font-Alfa-Slab-One:'Alfa Slab One','sans-serif'
+}
+
+@layer components {
+  .max-width {
+    @apply max-w-screen-2xl mx-auto;
+  }
+  .max-container{
+    @apply max-2xl:px-2.5 max-w-screen-2xl mx-auto;
+  }
+}
